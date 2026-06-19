@@ -7,7 +7,7 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class DonerResDto {
+public class DonorResDto {
 
         private String donorId;
         private Integer raktbhetId;
@@ -17,7 +17,7 @@ public class DonerResDto {
         private String bloodGrp;
         private String contact;
         private String email;
-        private AddressDTO address;
+        private AddressDto address;
 
 
 

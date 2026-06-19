@@ -11,7 +11,7 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class DonerEntity {
+public class DonorEntity {
         @Id
         @GeneratedValue(strategy = GenerationType.UUID)
         @Column(name = "donor_id")
@@ -29,8 +29,8 @@ public class DonerEntity {
 
         @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
         @JoinColumn(name = "address_id")
-        private Address address;
+        private AddressEntity address;
 
     }
 
-}
+

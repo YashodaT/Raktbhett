@@ -14,23 +14,24 @@ import java.util.Optional;
 import java.util.stream.Collectors;
 @Service
 @Transactional
-public class DonorSeriveImpl  implements DonorService {
+public class DonorServiceImpl implements DonorService {
 
         private final DonorRepository donorRepository;
         private final DonorMapper donorMapper;
 
         @Autowired
-        public void DonorServiceImpl(DonorRepository donorRepository, DonorMapper donorMapper) {
+        public DonorServiceImpl(DonorRepository donorRepository, DonorMapper donorMapper) {
             this.donorRepository = donorRepository;
             this.donorMapper = donorMapper;
         }
 
-    public DonorSeriveImpl(DonorRepository donorRepository, DonorMapper donorMapper) {
-        this.donorRepository = donorRepository;
-        this.donorMapper = donorMapper;
-    }
 
-    @Override
+       /* public DonorServiceImpl(DonorRepository donorRepository, DonorMapper donorMapper) {
+            this.donorRepository = donorRepository;
+            this.donorMapper = donorMapper;
+        }*/
+
+        @Override
         public DonorResDto createDonor(DonorReqDto createDTO) {
             if (createDTO == null) throw new IllegalArgumentException("createDTO must not be null");
             if (createDTO.getEmail() != null && donorRepository.existsByEmail(createDTO.getEmail())) {
@@ -79,6 +80,8 @@ public class DonorSeriveImpl  implements DonorService {
             donorRepository.deleteById(donorId);
         }
     }
+
+
 
 
 

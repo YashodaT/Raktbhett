@@ -8,7 +8,7 @@ import java.util.Optional;
 /**
  * Service API for donor operations.
  */
-public interface DonorSerive {
+public interface DonorService {
 
         DonorResDto createDonor(DonorReqDto createDTO);
 
@@ -25,4 +25,4 @@ public interface DonorSerive {
     }
 
 
-}
+

@@ -1,4 +1,8 @@
 package com.sparkCoder.raktbhet.repository;
 
-public interface BloodBankRepo {
+import com.sparkCoder.raktbhet.entity.BloodBankEntity;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface BloodBankRepository extends JpaRepository<BloodBankEntity, Integer> {
+
 }

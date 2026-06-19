@@ -1,4 +1,4 @@
-package com.sparkCoder.raktbhet.service;
+package com.sparkCoder.raktbhet;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
