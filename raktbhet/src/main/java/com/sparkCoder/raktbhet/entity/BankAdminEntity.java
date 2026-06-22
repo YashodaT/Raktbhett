@@ -23,13 +23,14 @@ import lombok.Setter;
         private Integer userId;
 
         private String name;
-        private String age;
+        private Integer age;
         private String gender;
-        private Long contactNumber;
+        private Integer contactNumber;
         private Integer bankId;
         private String identityNumber;
         private String userName;
         private String password;
+
 
 
     }

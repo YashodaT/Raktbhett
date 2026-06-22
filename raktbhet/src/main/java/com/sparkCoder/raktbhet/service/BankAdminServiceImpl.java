@@ -1,9 +1,12 @@
 package com.sparkCoder.raktbhet.service;
 
+import com.sparkCoder.raktbhet.controller.BankAdminController;
 import com.sparkCoder.raktbhet.dto.BankAdminDto;
 import com.sparkCoder.raktbhet.entity.BankAdminEntity;
 import com.sparkCoder.raktbhet.mapper.BankAdminMapper;
 import com.sparkCoder.raktbhet.repository.BankAdminRepository;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 @Service
@@ -11,9 +14,11 @@ public class BankAdminServiceImpl implements BankAdminService {
         @Autowired(required = true)
         private BankAdminRepository repositoryAdmin;
 
+    Logger logs= LoggerFactory.getLogger(BankAdminController.class);
         @Override
         public BankAdminDto register(BankAdminDto dto) {
 
+            logs.info("The admin data is resive");
             BankAdminEntity admin = BankAdminMapper.dtoToEntity(dto);
             BankAdminEntity saved = repositoryAdmin.save(admin);
             return BankAdminMapper.entityToDto(saved);
@@ -22,16 +27,15 @@ public class BankAdminServiceImpl implements BankAdminService {
 
         @Override
         public BankAdminDto getById(Integer id) {
-
+            logs.info("The admin data is resive");
             BankAdminEntity admin = repositoryAdmin.findById(id).orElseThrow(() -> new RuntimeException("Admin Not Found"));
             return BankAdminMapper.entityToDto(admin);
         }
 
         @Override
         public String update(Integer id, BankAdminDto dto) {
-
+            logs.info("The admin data is resive");
             BankAdminEntity admin = repositoryAdmin.findById(id).orElseThrow(() -> new RuntimeException("Admin Not Found"));
-
             admin.setName(dto.getName());
             admin.setAge(dto.getAge());
             admin.setGender(dto.getGender());
@@ -48,6 +52,7 @@ public class BankAdminServiceImpl implements BankAdminService {
         @Override
         public String delete(Integer id) {
 
+            logs.info("The admin data is resive");
             repositoryAdmin.deleteById(id);
             return "Admin Deleted Successfully";
         }
